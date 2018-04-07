@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="admin.template" template="/WEB-INF/templates/admin/template.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/templates/admin/header.jsp" />
+		<put-attribute name="sidebar"
+			value="/WEB-INF/templates/admin/sidebar.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/templates/admin/footer.jsp" />
+	</definition>
+	<!-- END TEMPLATE ADMIN -->
+	<definition name="admin.index" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/index/index.jsp" />
+	</definition>
+	<!-- END INDEX ADMIN -->
+	<definition name="admin.pagenotfound" template="/WEB-INF/jsp/admin/pagenotfound/index.jsp">
+	</definition>
+	<!-- END INDEX ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	<definition name="admin.category" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/category/index.jsp" />
+	</definition>
+	<!-- END CATEGORY ADMIN -->
+	<definition name="admin.category.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/category/add.jsp" />
+	</definition>
+	<!-- END CATEGORY ADD -->
+	<definition name="admin.category.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/category/edit.jsp" />
+	</definition>
+	<!-- END CATEGORY EDIT -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	<definition name="admin.comic" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic/index.jsp" />
+	</definition>
+	<!-- END COMIC ADMIN -->
+	<definition name="admin.comic.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic/add.jsp" />
+	</definition>
+	<!-- END COMIC ADD ADMIN -->
+	<definition name="admin.comic.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic/edit.jsp" />
+	</definition>
+	<!-- END COMIC EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	<definition name="admin.comic.chap" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/chap/index.jsp" />
+	</definition>
+	<!-- END COMIC ADMIN -->
+	<definition name="admin.comic.chap.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/chap/add.jsp" />
+	</definition>
+	<!-- END COMIC ADD ADMIN -->
+	<definition name="admin.comic.chap.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/chap/edit.jsp" />
+	</definition>
+	<!-- END COMIC EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	
+	<definition name="admin.comment" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comment/index.jsp" />
+	</definition>
+	<!-- END COMMENT ADMIN -->
+	<definition name="admin.comment.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comment/add.jsp" />
+	</definition>
+	<!-- END COMMENT ADD ADMIN -->
+	<definition name="admin.comment.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comment/edit.jsp" />
+	</definition>
+	<!-- END COMMENT EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	<definition name="admin.user" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/user/index.jsp" />
+	</definition>
+	<!-- END USERS ADMIN -->
+	<definition name="admin.user.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/user/add.jsp" />
+	</definition>
+	<!-- END USER ADD ADMIN -->
+	<definition name="admin.user.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/user/edit.jsp" />
+	</definition>
+	<!-- END USER EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	<definition name="admin.author" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/author/index.jsp" />
+	</definition>
+	<!-- END AUTHOR ADMIN -->
+	<definition name="admin.author.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/author/add.jsp" />
+	</definition>
+	<!-- END AUTHOR ADD ADMIN -->
+	<definition name="admin.author.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/author/edit.jsp" />
+	</definition>
+	<!-- END AUTHOR EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	
+	<definition name="public.template" template="/WEB-INF/templates/public/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/templates/public/sidebar.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+	</definition>
+
+	<definition name="public.index" extends="public.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/public/index.jsp" />
+	</definition>
+	<!-- END INDEX PUBLIC -->
+	<definition name="public.contact" extends="public.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/public/contact.jsp" />
+	</definition>
+	<!-- END CONTACT PUBLIC -->
+	<definition name="public.category" extends="public.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/public/category.jsp" />
+	</definition>
+	<!-- END CATEGORY PUBLIC -->
+	<definition name="public.search" extends="public.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/public/search.jsp" />
+	</definition>
+	<!-- END SEARCH PUBLIC -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	
+	<definition name="error" template="/WEB-INF/jsp/admin/404.jsp"> 
+	</definition> 
+	<!-- END INDEX USER --> 
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	<definition name="auth.login" template="/WEB-INF/jsp/auth/login.jsp"> 
+	</definition> 
+	<!-- END INDEX USER --> 
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+</tiles-definitions>
