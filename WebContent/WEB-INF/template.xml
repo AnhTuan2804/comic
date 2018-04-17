@@ -65,19 +65,39 @@
 	<!-- END COMIC EDIT ADMIN -->
 	<!-- /////////////////////////////////////////////////////////////////////// -->
 	
+	<definition name="admin.comic.category" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic-category/index.jsp" />
+	</definition>
+	<!-- END COMIC ADMIN -->
+	<definition name="admin.comic.category.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic-category/add.jsp" />
+	</definition>
+	<!-- END COMIC ADD ADMIN -->
+	<definition name="admin.comic.category.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic-category/edit.jsp" />
+	</definition>
+	<!-- END COMIC EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
+	<definition name="admin.comic.author" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic-author/index.jsp" />
+	</definition>
+	<!-- END COMIC ADMIN -->
+	<definition name="admin.comic.author.add" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic-author/add.jsp" />
+	</definition>
+	<!-- END COMIC ADD ADMIN -->
+	<definition name="admin.comic.author.edit" extends="admin.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/admin/comic-author/edit.jsp" />
+	</definition>
+	<!-- END COMIC EDIT ADMIN -->
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	
 	
 	<definition name="admin.comment" extends="admin.template">
 		<put-attribute name="content" value="/WEB-INF/jsp/admin/comment/index.jsp" />
 	</definition>
 	<!-- END COMMENT ADMIN -->
-	<definition name="admin.comment.add" extends="admin.template">
-		<put-attribute name="content" value="/WEB-INF/jsp/admin/comment/add.jsp" />
-	</definition>
-	<!-- END COMMENT ADD ADMIN -->
-	<definition name="admin.comment.edit" extends="admin.template">
-		<put-attribute name="content" value="/WEB-INF/jsp/admin/comment/edit.jsp" />
-	</definition>
-	<!-- END COMMENT EDIT ADMIN -->
 	<!-- /////////////////////////////////////////////////////////////////////// -->
 	
 	<definition name="admin.user" extends="admin.template">
@@ -120,6 +140,10 @@
 		<put-attribute name="content" value="/WEB-INF/jsp/public/index.jsp" />
 	</definition>
 	<!-- END INDEX PUBLIC -->
+	<definition name="public.detail" extends="public.template">
+		<put-attribute name="content" value="/WEB-INF/jsp/public/detail.jsp" />
+	</definition>
+	<!-- END INDEX PUBLIC -->
 	<definition name="public.contact" extends="public.template">
 		<put-attribute name="content" value="/WEB-INF/jsp/public/contact.jsp" />
 	</definition>
@@ -140,6 +164,10 @@
 	<!-- END INDEX USER --> 
 	<!-- /////////////////////////////////////////////////////////////////////// -->
 	<definition name="auth.login" template="/WEB-INF/jsp/auth/login.jsp"> 
+	</definition> 
+	<!-- END INDEX USER --> 
+	<!-- /////////////////////////////////////////////////////////////////////// -->
+	<definition name="public.login" template="/WEB-INF/jsp/auth/plogin.jsp"> 
 	</definition> 
 	<!-- END INDEX USER --> 
 	<!-- /////////////////////////////////////////////////////////////////////// -->

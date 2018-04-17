@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/templates/taglib.jsp" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <div class="col-sm-4 col-sm-push-8">
 
 
@@ -13,41 +14,6 @@
 							<p>Website to read DC and Marvel Comics Online for FREE. Read
 								Comics Online for Free.</p>
 						</div>
-					</div>
-
-				</div>
-				<div class="widget-container">
-
-					<div class="widget-social">
-						<ul class="clearfix">
-							<li class="social-facebook first">
-								<div>
-									<div id="fb-root"></div>
-									<script type="text/rocketscript">
-                                        $(document).ready(function () { get_social_counts("/socialCounts", "http://readcomics.website"); });
-                                    </script>
-									<a rel="nofollow"
-										href="https://www.facebook.com/share.php?u=http://readcomics.website"
-										class="share-facebook"><i>Facebook</i></a>
-									<div class="follow-counter">0</div>
-								</div>
-							</li>
-							<li class="social-twitter">
-								<div>
-									<a rel="nofollow"
-										href="https://twitter.com/share?url=http://readcomics.website&text=Read+Comics+Online+-+Read+DC+and+Marvel+Comics+Online+for+Free"
-										class="share-twitter"><i>Twitter</i></a>
-									<div class="follow-counter">0</div>
-								</div>
-							</li>
-							<li class="social-google">
-								<div>
-									<a rel="nofollow"
-										href="https://plus.google.com/share?url=http://readcomics.website"><i>Google+</i></a>
-									<div class="follow-counter">0</div>
-								</div>
-							</li>
-						</ul>
 					</div>
 
 				</div>
@@ -70,7 +36,7 @@
 										</div>
 										<div class="media-body">
 											<h5 class="media-heading">
-												<a href="${pageContext.request.contextPath }/detail/${slugUtil.makeSlug(comic.comic_name)}/${comic.comic_id}" class="chart-title"><strong>${comic.comic_name }</strong></a>
+												<a href="${pageContext.request.contextPath }/detail/${slugUtil.makeSlug(comic.comic_name)}/${comic.comic_id}" class="chart-title"><strong>${fn:toUpperCase(comic.comic_name) }</strong></a>
 											</h5>
 											<i class="fa fa-eye"></i> ${comic.comic_view }
 										</div>

@@ -8,35 +8,37 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Category</li>
+        <li class="breadcrumb-item active">Comment</li>
       </ol>
       
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> List Category </div>
+          <i class="fa fa-table"></i> List Comment </div>
         <div class="card-body">
         
           <div class="table-responsive">
-	        <div>
-	        	<a href="${pageContext.request.contextPath }/admin/category/add" class="btn btn-primary" style="width: 20%;" ><i class="fa fa-plus"></i></a>
-	        </div>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>ID Category</th>
-                  <th>Name of category</th>
+                  <th>ID Comment</th>
+                  <th>Username</th>
+                  <th>Name Of Comic</th>
+                  <th>Chap Number</th>
+                  <th>Create At</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-              <c:forEach items="${listCat }" var="cat">
+              <c:forEach items="${listComment }" var="comment">
 	                <tr>
-	                  <td>${cat.cat_id }</td>
-	                  <td>${cat.cat_name }</td>
+	                  <td>${comment.cmt_id }</td>
+	                  <td>${comment.username }</td>
+	                  <td>${comment.comic }</td>
+	                  <td>${comment.chap_num }</td>
+	                  <td><fmt:formatDate value="${comment.create_at }" pattern="HH:mm dd-MM-yyyy"/></td>
 	                  <td>
-						<a href="${pageContext.request.contextPath }/admin/category/edit/cid/${cat.cat_id }"><i class="fa fa-edit"></i> </a>
-						<a href="${pageContext.request.contextPath }/admin/category/edit/cid/${cat.cat_id }"><i class="fa fa-remove"></i> </a>
+						<a href="${pageContext.request.contextPath }/admin/comment-${comment.cmt_id }"><i class="fa fa-remove"></i> </a>
 					  </td>
 	                </tr>
                 </c:forEach>

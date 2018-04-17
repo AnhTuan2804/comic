@@ -14,6 +14,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<intercept-url pattern="/admin/category-**/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />
 		<intercept-url pattern="/admin/comic" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />
 		<intercept-url pattern="/admin/comic-**/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />
+		<intercept-url pattern="/admin/comic/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />
 		<intercept-url pattern="/admin/author" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />
 		<intercept-url pattern="/admin/author-**/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />
 		<intercept-url pattern="/admin/comment" access="hasAnyRole('ROLE_ADMIN', 'ROLE_QUANLY')" />

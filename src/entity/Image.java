@@ -3,17 +3,17 @@ package entity;
 public class Image {
 
 	private int img_id;
-	private String img_text;
+	private String img_name;
 	private int chap_id;
 
 	public Image() {
 		super();
 	}
 
-	public Image(int img_id, String img_text, int chap_id) {
+	public Image(int img_id, String img_name, int chap_id) {
 		super();
 		this.img_id = img_id;
-		this.img_text = img_text;
+		this.img_name = img_name;
 		this.chap_id = chap_id;
 	}
 
@@ -25,12 +25,12 @@ public class Image {
 		this.img_id = img_id;
 	}
 
-	public String getImg_text() {
-		return img_text;
+	public String getImg_name() {
+		return img_name;
 	}
 
-	public void setImg_text(String img_text) {
-		this.img_text = img_text;
+	public void setImg_name(String img_name) {
+		this.img_name = img_name;
 	}
 
 	public int getChap_id() {

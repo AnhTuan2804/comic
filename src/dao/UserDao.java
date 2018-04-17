@@ -61,5 +61,10 @@ public class UserDao {
 		String sql = "DELETE FROM user WHERE user_id = ?";
 		return jdbcTemplate.update(sql, new Object[] { id });
 	}
+	/*CHECK LOGIN FOR PUBLIC*/
+	public int checkLogin(User user) {
+		String sql = "SELECT COUNT(*) FROM user WHERE username = ? && password = ?";
+		return jdbcTemplate.queryForObject(sql, new Object[] { user.getUsername(), user.getPassword() }, Integer.class);
+	}
 
 }

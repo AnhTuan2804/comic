@@ -40,7 +40,7 @@
                   <div class="card-body">
                     <form id="add-category" action="${pageContext.request.contextPath }/admin/category-add" method="post" >
                       <div class="form-group">
-                      	<input type="text" id="cat_name" name="cat_name" placeholder="Enter name or category.." class="form-control">
+                      	<input type="text" id="cat_name" name="cat_name" value="${category.cat_name }" placeholder="Enter name or category.." class="form-control">
                       </div>
                       <button type="submit" class="btn btn-primary btn-sm">
 	                      <i class="fa fa-dot-circle-o"></i> Create

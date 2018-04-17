@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 public class Chap {
 	private int chap_id;
 	private int chap_num;
-	private String chap_content;
 	private int chap_view;
 	private Timestamp created_at;
 	private int comic_id;
@@ -15,15 +14,13 @@ public class Chap {
 		super();
 	}
 
-	public Chap(int chap_id, int chap_num, int chap_view, Timestamp createdd_at, int comic_id, String chap_content,
-			String comic_name) {
+	public Chap(int chap_id, int chap_num, int chap_view, Timestamp createdd_at, int comic_id, String comic_name) {
 		super();
 		this.chap_id = chap_id;
 		this.chap_num = chap_num;
 		this.chap_view = chap_view;
 		this.created_at = createdd_at;
 		this.comic_id = comic_id;
-		this.chap_content = chap_content;
 		this.comic_name = comic_name;
 	}
 
@@ -65,14 +62,6 @@ public class Chap {
 
 	public void setComic_id(int comic_id) {
 		this.comic_id = comic_id;
-	}
-
-	public String getChap_content() {
-		return chap_content;
-	}
-
-	public void setChap_content(String chap_content) {
-		this.chap_content = chap_content;
 	}
 
 	public String getComic_name() {

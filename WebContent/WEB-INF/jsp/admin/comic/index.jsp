@@ -47,6 +47,7 @@
                   <th>Date Create</th>
                   <th>Age</th>
                   <th>Create By</th>
+                  <th>Comic View</th>
                   <th>Image</th>
                   <th>Action</th>
                 </tr>
@@ -59,6 +60,7 @@
 	                  <td><fmt:formatDate value="${comic.create_at }" pattern="HH:mm-dd/MM/yyyy"/> </td>
 	                  <td>${comic.age}</td>
 	                  <td>${comic.name_role}: ${comic.username}</td>
+	                  <td>${comic.comic_view}</td>
 	                  <td><img style="width: 150px;" alt="${comic.picture }" src="${pageContext.request.contextPath }/files/${comic.picture }"></td>
 	                  <td>
 						<a href="${pageContext.request.contextPath }/admin/comic-edit/${comic.comic_id }">Edit&nbsp;<i class="fa fa-edit"></i> </a>

@@ -13,13 +13,17 @@ public class Comic {
 	private String picture;
 	private String name_role;
 	private String username;
+	private int comic_comment;
+	private Timestamp lastChapUpdate;
+	private int chap_id;
 
 	public Comic() {
 		super();
 	}
 
 	public Comic(int comic_id, String comic_name, String comic_preview, Timestamp create_at, int comic_view,
-			int user_id, int age, String picture, String name_role, String username) {
+			int user_id, int age, String picture, String name_role, String username, int comic_comment,
+			Timestamp lastChapUpdate, int chap_id) {
 		super();
 		this.comic_id = comic_id;
 		this.comic_name = comic_name;
@@ -31,6 +35,9 @@ public class Comic {
 		this.picture = picture;
 		this.name_role = name_role;
 		this.username = username;
+		this.comic_comment = comic_comment;
+		this.lastChapUpdate = lastChapUpdate;
+		this.chap_id = chap_id;
 	}
 
 	public int getComic_id() {
@@ -111,6 +118,30 @@ public class Comic {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public int getComic_comment() {
+		return comic_comment;
+	}
+
+	public void setComic_comment(int comic_comment) {
+		this.comic_comment = comic_comment;
+	}
+
+	public Timestamp getLastChapUpdate() {
+		return lastChapUpdate;
+	}
+
+	public void setLastChapUpdate(Timestamp lastChapUpdate) {
+		this.lastChapUpdate = lastChapUpdate;
+	}
+
+	public int getChap_id() {
+		return chap_id;
+	}
+
+	public void setChap_id(int chap_id) {
+		this.chap_id = chap_id;
 	}
 
 }

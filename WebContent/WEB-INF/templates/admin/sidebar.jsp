@@ -31,6 +31,16 @@
               <span class="nav-link-text">Truyện</span></a>
             </li>
             <li>
+              <a href="${pageContext.request.contextPath }/admin/comic-category">
+              <i class="fa fa-book"></i>
+              <span class="nav-link-text">Truyện theo danh mục</span></a>
+            </li>
+            <li>
+              <a href="${pageContext.request.contextPath }/admin/comic-author">
+              <i class="fa fa-book"></i>
+              <span class="nav-link-text">Truyện theo tác giả</span></a>
+            </li>
+            <li>
               <a href="${pageContext.request.contextPath }/admin/comment">
               <i class="fa fa-comment"></i>
               <span class="nav-link-text">Bình luận</span></a>

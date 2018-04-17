@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@include file="/templates/taglib.jsp" %>
 <!doctype html>
 <html lang="en">
 
@@ -30,6 +31,8 @@
 	href="${pageContext.request.contextPath }/templates/public/css/bootswatch/cosmo/bootstrap.min.css">
 <link media="all" type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath }/templates/public/css/readcomics.css">
+	<link media="all" type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath }/templates/public/css/slide.css">
 <Link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script data-rocketsrc="${pageContext.request.contextPath }/templates/public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"
@@ -89,7 +92,7 @@
 					aria-expanded="false"><i class="fa fa-user"></i> <span
 						class="caret"></span></a>
 					<ul class="dropdown-menu profil-menu">
-						<li><a href="/admin/login"> <i class="fa fa-sign-in"></i>
+						<li><a href="${pageContext.request.contextPath}/public/login"> <i class="fa fa-sign-in"></i>
 								Login
 						</a></li>
 					</ul></li>
@@ -98,10 +101,10 @@
 				<li class="search dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="fa fa-search"></i></a>
 					<div class="dropdown-menu">
-						<form class="navbar-form">
+						<form action="${pageContext.request.contextPath }/search" class="navbar-form">
 							<div class="navbar-form  navbar-right " role="search">
 								<div class="form-group">
-									<input id="autocomplete" class="form-control" type="text"
+									<input id="autocomplete" name="key" class="form-control" type="text"
 										placeholder="Search..." style="border-radius: 0;" />
 								</div>
 							</div>
@@ -119,14 +122,11 @@
                         </div>
                     </form>
                 </li> -->
-				<li><a href="http://readcomics.website">Home</a></li>
-				<li><a href="/comic-list">Comic list</a></li>
-				<li><a href="/latest-release">Latest release</a></li>
-				<li><a href="/random">Random Comic</a></li>
-				<li><a href="/advanced-search">Advanced Search</a></li>
-				<li><a href="http://getcomics.info">GetComics</a></li>
-				<li><a href="/latest-news">Weekly Comics</a></li>
-				<li><a href="http://getcomics.info/contact/">Contact Us</a></li>
+				<li><a href="${pageContext.request.contextPath }/">Home</a></li>
+				<c:forEach items="${listCategory }" var="cat">
+					<li><a href="${pageContext.request.contextPath }/category/${slugUtil.makeSlug(cat.cat_name)}/${cat.cat_id}">${cat.cat_name }</a></li>
+				</c:forEach>
+				<%-- <li><a href="${pageContext.request.contextPath }/contact">Contact Us</a></li> --%>
 			</ul>
 		</div>
 	</nav>

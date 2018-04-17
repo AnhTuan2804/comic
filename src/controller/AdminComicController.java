@@ -2,7 +2,11 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,8 +24,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import dao.ChapDao;
 import dao.ComicDao;
+import dao.ImageDao;
 import entity.Chap;
 import entity.Comic;
+import entity.Image;
 import entity.User;
 import util.FilenameUtil;
 
@@ -32,6 +38,8 @@ public class AdminComicController {
 	private ComicDao comicDao;
 	@Autowired
 	private ChapDao chapDao;
+	@Autowired
+	private ImageDao imageDao;
 	@Autowired
 	private FilenameUtil filenameUtil;
 
@@ -134,22 +142,32 @@ public class AdminComicController {
 
 	/* DELETE */
 	@RequestMapping(value = "comic-del/{id}")
-	public String controlDel(@PathVariable(value = "id") int id,
-			@RequestParam(value = "image") CommonsMultipartFile image, HttpServletRequest request,
-			RedirectAttributes ra) {
+	public String controlDel(@PathVariable(value = "id") int id, HttpServletRequest request, RedirectAttributes ra) {
 		String realPath = request.getServletContext().getRealPath("files");
 		File dirPath = new File(realPath);
 		if (!dirPath.exists()) {
 			dirPath.mkdir();
 		}
-		String filepath = realPath + File.separator + filenameUtil.renameFile(image.getOriginalFilename());
+		String filepath = realPath + File.separator + filenameUtil.renameFile(comicDao.getItemByID(id).getPicture());
 		File delFilepath = new File(filepath);
 		if (delFilepath.exists()) {
 			delFilepath.delete();
 		}
 		List<Chap> listChapByIDComic = chapDao.getListItems(id);
+		ArrayList<Image> listImageByIDChap;
 		if (comicDao.delItem(id) > 0) {
-			
+			for (Chap chap : listChapByIDComic) {
+				listImageByIDChap = (ArrayList<Image>) imageDao.getItemsByIDChap(chap.getChap_id());
+				for (Image image : listImageByIDChap) {
+					filepath = realPath + File.separator + image.getImg_name();
+					delFilepath = new File(filepath);
+					if (delFilepath.exists()) {
+						delFilepath.delete();
+					}
+					imageDao.delItem(image.getImg_id());
+				}
+				chapDao.delItem(chap.getChap_id());
+			}
 			ra.addFlashAttribute("msg", "DELETE SUCCESS");
 		} else {
 			ra.addFlashAttribute("msg1", "ERROR WHILE DELETE");
